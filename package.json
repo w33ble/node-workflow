@@ -1,0 +1,29 @@
+{
+  "name": "understanding-react",
+  "version": "0.0.0",
+  "description": "Understanding React - Code ===================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/w33ble/understanding-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/w33ble/understanding-react/issues"
+  },
+  "homepage": "https://github.com/w33ble/understanding-react",
+  "dependencies": {
+    "docpad-plugin-eco": "~2.0.3",
+    "docpad": "~6.64.0",
+    "docpad-plugin-highlightjs": "~2.2.1",
+    "docpad-plugin-less": "~2.4.1",
+    "docpad-plugin-marked": "~2.2.1"
+  },
+  "devDependencies": {
+    "docpad-plugin-livereload": "~2.6.0"
+  }
+}

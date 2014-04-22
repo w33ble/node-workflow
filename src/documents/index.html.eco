@@ -1,0 +1,23 @@
+---
+layout: 'default'
+---
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Node Workflow</h1>
+        <p>Code and examples for using Node.js</p>
+    </div>
+
+
+    <div class="row">
+        <div class="page-list col-lg-6 col-lg-offset-3">
+            <% for page in @getCollection('pages').sortArray(order: 1): %>
+                <div class="item">
+                    <h4><a href=".<%= page.url %>"><%= page.title %></a></h4>
+                    <p><%= page.description %></p>
+                </div>
+            <% end %>
+        </div>
+    </div>
+
+</div>
