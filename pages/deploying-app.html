@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Deploying Your App | Node Workflows</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="../css/docco.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="../js/modernizr.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1><a href="../">Node Workflow</a></h1>
+                <p>Code and examples for using Node.js</p>
+            </div>
+
+            <h2 id="problem">Problem</h2>
+<p>You built your Node app (congrats on that!), but where do you put it?</p>
+<h2 id="solutions">Solutions</h2>
+<p>You have some options, as it turns out. Here are some I&#39;ve used and liked.</p>
+<h3 id="heroku">Heroku</h3>
+<p><a href="https://www.heroku.com/">Heroku</a> is a IaaS service and supports Node and several other languages. Their external plug-ins such as MongoLabs and RedisToGo, to name a couple, make it really convenient.</p>
+<p>Deployment involves pushing a git repo to their servers; that&#39;s it. They have a command line utility you can install that will allow you to control your instance as well. Best of all, they have a <a href="https://www.heroku.com/pricing">free tier</a> to tinker with, so you can get your app online without taking out your wallet.</p>
+<h3 id="modulous">Modulous</h3>
+<p><a href="http://modulus.io/">Modulous</a> is another IaaS, but unlike Heroku, they only deal with Node hosting. They have native DB and File storage, and while they lack a free tier, their service is a bit cheaper than Heroku&#39;s.</p>
+<p>Deployment is simple and happens via a command line utility that you install from <code>npm</code>.</p>
+<h3 id="github-pages">Github Pages</h3>
+<p><a href="https://pages.github.com/">Github Pages</a> is a great place to deploy static content (like the very page you are looking at, for example).</p>
+<p>It&#39;s not specific to node; in fact it will not run node. I mention it because there are a number of handy Node-based static site generators like <a href="http://docpad.org/">Docpad</a>, <a href="http://www.metalsmith.io/">Metalsmith</a> and <a href="https://www.harp.io/">Harp</a>, and static sites are often times all people really need when they reach for something like Wordpress.</p>
+<h3 id="divshot">Divshot</h3>
+<p><a href="http://www.divshot.com/">Divshot</a> is for static hosting, much like Github Pages. They are different in that they focus on production-level hosting, add super fast caching and make deployment as simple as running a command line script, which you install with <code>npm</code>.</p>
+<h3 id="your-own-box">Your own box</h3>
+<p>With servers being as cheap as <a href="https://www.digitalocean.com/?refcode=3f080df3953e">$5 a month</a>, you may just want to host your app yourself. There are 2 modules that work well for doing this.</p>
+<ul>
+<li><a href="https://github.com/nodejitsu/forever">forever</a> will daemonize your node application, making sure that it stays running. If it crashes, <code>forever</code> will restart it for you</li>
+<li><a href="https://github.com/Unitech/pm2">pm2</a> will also daemonize your node app, but will also help you scale it to multiple processes. Have a box with more than 1 core? Why not run more than 1 copy of your app on it then?! <code>pm2</code> will help you do that, and more.</li>
+</ul>
+
+        </div>
+        <script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+    </body>
+</html>
