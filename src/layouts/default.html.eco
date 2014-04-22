@@ -13,6 +13,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <link rel="stylesheet" href="<%= @getPublicPath() %>css/main.css">
+        <link rel="stylesheet" href="<%= @getPublicPath() %>css/docco.css">
         <link rel="stylesheet" href="<%= @getPublicPath() %>css/bootstrap.min.css">
         <script src="<%= @getPublicPath() %>js/modernizr.js"></script>
     </head>
