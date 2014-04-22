@@ -2,13 +2,6 @@
 layout: 'default'
 ---
 
-<div class="container">
-    <div class="jumbotron text-center">
-        <h1>Node Workflow</h1>
-        <p>Code and examples for using Node.js</p>
-    </div>
-
-
     <div class="row">
         <div class="page-list col-lg-6 col-lg-offset-3">
             <% for page in @getCollection('pages').sortArray(order: 1): %>
@@ -19,5 +12,3 @@ layout: 'default'
             <% end %>
         </div>
     </div>
-
-</div>

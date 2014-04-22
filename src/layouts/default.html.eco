@@ -12,9 +12,9 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="<%= @getPublicPath() %>css/main.css">
         <link rel="stylesheet" href="<%= @getPublicPath() %>css/docco.css">
         <link rel="stylesheet" href="<%= @getPublicPath() %>css/bootstrap.min.css">
+        <link rel="stylesheet" href="<%= @getPublicPath() %>css/main.css">
         <script src="<%= @getPublicPath() %>js/modernizr.js"></script>
     </head>
     <body>
@@ -23,7 +23,14 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <%- @content %>
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1><a href="<%= @getPublicPath() %>">Node Workflow</a></h1>
+                <p>Code and examples for using Node.js</p>
+            </div>
+
+            <%- @content %>
+        </div>
         <%- @getBlock('scripts').toHTML() %>
     </body>
 </html>
