@@ -6,16 +6,16 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Node Workflows</title>
+        <title>Handling Async | Node Workflows</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/docco.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/modernizr.js"></script>
+        <link rel="stylesheet" href="../css/docco.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="../js/modernizr.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -25,50 +25,40 @@
         <!-- Add your site or application content here -->
         <div class="container">
             <div class="jumbotron text-center">
-                <h1><a href="">Node Workflow</a></h1>
+                <h1><a href="../">Node Workflow</a></h1>
                 <p>Code and examples for using Node.js</p>
             </div>
 
-            <div class="row">
-        <div class="page-list col-lg-6 col-lg-offset-3">
-            
-                <div class="item">
-                    <h4><a href="./pages/install.html">Install Node</a></h4>
-                    <p>Dead simple, but here are some links</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/hello.html">Hello World</a></h4>
-                    <p>Simplest node script</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/hello-web.html">Hello Web</a></h4>
-                    <p>Simplest node web script</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/npm-modules.html">NPM Modules</a></h4>
-                    <p>This is where Node's true power comes from</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/reloading-node.html">Reloading Node</a></h4>
-                    <p>Dealing with changes to your application</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/handling-async.html">Handling Async</a></h4>
-                    <p>How to write non-blocking code in Node's single thread</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/misc-resources.html">Resources List</a></h4>
-                    <p>Everything from the other slides, in one place</p>
-                </div>
-            
-        </div>
-    </div>
+            <h2 id="problem">Problem</h2>
+<p>Node is single threaded, so blocking code blocks everyone</p>
+<h2 id="solutions">Solutions</h2>
+<h3 id="callbacks">Callbacks</h3>
+<p>Functions are first-class, we can pass them in and have them execute at completion</p>
+<h3 id="async-module">Async module</h3>
+<blockquote>
+<p>Async utilities for node and the browser</p>
+</blockquote>
+<p><a href="https://github.com/caolan/async">Github page</a></p>
+<p><code>async</code> makes callbacks manageable and gives you a unified way to handle errors in the chain. It also provides some interesting abstractions, like <code>waterfall</code>, <code>until</code>, <code>parallelLimit</code>, <code>queue</code> and several others.</p>
+<h3 id="promises">Promises</h3>
+<p>Coming to V8, might be native to node</p>
+<p>There are some great libraries for using Promises right now though</p>
+<ul>
+<li><a href="https://github.com/elijahr/when.js">when.js</a></li>
+<li><a href="https://github.com/kriskowal/q">Q</a></li>
+<li><a href="https://github.com/petkaantonov/bluebird">bluebird</a></li>
+</ul>
+<p>Resources:</p>
+<ul>
+<li>Docs for the above projects</li>
+<li><a href="http://davidwalsh.name/write-javascript-promises">Write Better JavaScript with Promises</a></li>
+<li><a href="http://www.html5rocks.com/en/tutorials/es6/promises/">JavaScript Promises - There and back again</a></li>
+<li><a href="http://taoofcode.net/promise-anti-patterns/">Promise Anti-patterns</a></li>
+</ul>
+<h3 id="generators">Generators</h3>
+<p>Coming to ES6 and V8, will be native to node</p>
+<p>Still not &quot;production ready&quot;, but you can use now with the <code>--harmony</code> flag</p>
+
         </div>
         <script >(function(){
 	/* Did we just livereload? */

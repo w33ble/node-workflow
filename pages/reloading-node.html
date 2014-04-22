@@ -6,16 +6,16 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Node Workflows</title>
+        <title>Reloading Node | Node Workflows</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/docco.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/modernizr.js"></script>
+        <link rel="stylesheet" href="../css/docco.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="../js/modernizr.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -25,50 +25,33 @@
         <!-- Add your site or application content here -->
         <div class="container">
             <div class="jumbotron text-center">
-                <h1><a href="">Node Workflow</a></h1>
+                <h1><a href="../">Node Workflow</a></h1>
                 <p>Code and examples for using Node.js</p>
             </div>
 
-            <div class="row">
-        <div class="page-list col-lg-6 col-lg-offset-3">
-            
-                <div class="item">
-                    <h4><a href="./pages/install.html">Install Node</a></h4>
-                    <p>Dead simple, but here are some links</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/hello.html">Hello World</a></h4>
-                    <p>Simplest node script</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/hello-web.html">Hello Web</a></h4>
-                    <p>Simplest node web script</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/npm-modules.html">NPM Modules</a></h4>
-                    <p>This is where Node's true power comes from</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/reloading-node.html">Reloading Node</a></h4>
-                    <p>Dealing with changes to your application</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/handling-async.html">Handling Async</a></h4>
-                    <p>How to write non-blocking code in Node's single thread</p>
-                </div>
-            
-                <div class="item">
-                    <h4><a href="./pages/misc-resources.html">Resources List</a></h4>
-                    <p>Everything from the other slides, in one place</p>
-                </div>
-            
-        </div>
-    </div>
+            <h2 id="problem">Problem</h2>
+<p>Node runs from memory and does not reload itself with changes</p>
+<h2 id="solution">Solution</h2>
+<p><code>nodemon</code> to the rescue</p>
+<blockquote>
+<p>Simple monitor script for use during development of a node.js app.</p>
+</blockquote>
+<ul>
+<li>Automatic restarting of application.</li>
+<li>Detects default file extension to monitor.</li>
+<li>Default support for node &amp; coffeescript, but easy to run any executable (such as python, make, etc).</li>
+<li>Ignoring specific files or directories.</li>
+<li>Watch specific directories.</li>
+<li>Works with server applications or one time run utilities and REPLs.</li>
+<li>Requirable in node apps.</li>
+<li>Open source and available on github.</li>
+</ul>
+<p><a href="http://nodemon.io/">Nodemon Homepage</a></p>
+<h4 id="installation">Installation</h4>
+<p><code>npm install -g nodemon</code></p>
+<h4 id="usage">Usage</h4>
+<p><code>nodemon index.js</code></p>
+
         </div>
         <script >(function(){
 	/* Did we just livereload? */

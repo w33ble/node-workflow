@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hello Web | Node Workflows</title>
+        <title>NPM Modules | Node Workflows</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,30 +29,69 @@
                 <p>Code and examples for using Node.js</p>
             </div>
 
-            <h2>Hello World - Web Edition</h2>
+            <h2 id="modules">Modules</h2>
+<p>Node comes with a command line tool called NPM.</p>
+<ul>
+<li><code>npm</code> is used to search, install and publish node modules.</li>
+<li><a href="https://www.npmjs.org/">npmjs.org</a> can be used to browse packages</li>
+<li><a href="http://eirikb.github.io/nipster">Nipster</a> ranks modules by github stats, and is a great way to search</li>
+</ul>
+<h2 id="make-your-own">Make your own</h2>
+<p>Node uses <a href="http://wiki.commonjs.org/wiki/Modules/1.1">CommonJS</a> for its module system.</p>
+<h3 id="short-version">Short version</h3>
+<ul>
+<li>Use <code>require</code> to use modules</li>
+<li>Use <code>module.exports</code> to make your module return a function</li>
+<li>Use <code>exports.method</code> to make your module return multiple methods</li>
+</ul>
+<h3 id="examples">Examples</h3>
+<p>WARNING: This is contrived, example code. Don&#39;t use it in real life code.</p>
+<h4 id="blink-tag-module">Blink tag module</h4>
+<div>
+<pre class="highlight"><code class="hljs javascript">
+<span class="hljs-comment">// blinky.js</span>
 
+module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(str)</span> {</span>
+  <span class="hljs-keyword">return</span> str.blink();
+}
+</code></pre>
+</div>
+
+<div>
 <pre class="highlight"><code class="hljs javascript">
 <span class="hljs-comment">// index.js</span>
 
-<span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
-
-<span class="hljs-keyword">var</span> server = http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res)</span> {</span>
-res.end(<span class="hljs-string">'Hello World'</span>);
-});
-
-server.listen(<span class="hljs-number">8080</span>);
-console.log(<span class="hljs-string">'Running on port 8080'</span>);
+<span class="hljs-keyword">var</span> blinky = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./blinky'</span>);
+console.log(blinky(<span class="hljs-string">'Hello World'</span>));
 </code></pre>
+</div>
 
-<p></div></p>
-<p><div class="container"></p>
-<p><h2>Execution</h2></p>
-<p>From the terminal, run <code>node</code> and the file to file</p>
+<h4 id="calculator-module">Calculator module</h4>
+<div>
+<pre class="highlight"><code class="hljs javascript">
+<span class="hljs-comment">// maths.js</span>
 
-<pre class="highlight"><code class="hljs bash">
-$ node index.js
-Running on port <span class="hljs-number">8080</span>
+export.add = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b)</span> {</span>
+  <span class="hljs-keyword">return</span> a + b;
+}
+
+export.subtract = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b)</span> {</span>
+  <span class="hljs-keyword">return</span> a - b;
+}
+
+<span class="hljs-comment">// ...etc</span>
 </code></pre>
+</div>
+
+<div>
+<pre class="highlight"><code class="hljs javascript">
+<span class="hljs-comment">// index.js</span>
+
+<span class="hljs-keyword">var</span> maths = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./maths'</span>);
+console.log(maths.add(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>));
+console.log(maths.subtract(<span class="hljs-number">6</span>, <span class="hljs-number">2839827349827534</span>));
+</code></pre>
+</div>
         </div>
         <script >(function(){
 	/* Did we just livereload? */
