@@ -4,8 +4,6 @@ description: "Dead simple, but here are some links"
 order: 9
 ---
 
-<div class="container">
-
 <h2>nvm</h2>
 
 <div><em>Node Version Manager - Simple bash script to manage multiple active node.js versions</em></div>
@@ -23,4 +21,10 @@ order: 9
   <li>[Node API](http://nodejs.org/api/)</li>
 </ul>
 
-</div>
+## Resources
+
+- [HarvestJS on Github](https://github.com/harvestjs)
+- [Nodeschool](http://nodeschool.io/)
+- [ExpressJS - Getting Started](http://expressjs.com/guide.html)
+- [HapiJS - Github (Getting Started)](https://github.com/spumko/hapi#getting-started)
+- [MongooseJS - Getting Started](http://mongoosejs.com/docs/index.html)
