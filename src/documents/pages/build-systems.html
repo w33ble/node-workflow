@@ -1,0 +1,79 @@
+---
+title: "Build Systems"
+description: "Because automation is where it's at"
+order: 50
+---
+
+<h2>Problem</h2>
+
+<p>You have tasks you need to run constantly. Even a simple project might need to:</p>
+
+<ul>
+  <li> Use a css pre-processor </li>
+  <li> Concat and minify JS </li>
+  <li> Pre-compile front-end templates </li>
+  <li> Transpile coffeescript </li>
+</ul>
+
+<p>You probably also want to <a href="http://jslint.com/">lint</a> your code and maybe even run some tests.</p>
+
+<h2>Solution</h2>
+
+<p>Use a build processes. This is a program, usually written in Node, that will perform all these tasks for you automatically. You set it up once and never worry about those steps again.</p>
+
+<ul>
+  <li><a href="http://gulpjs.com/">Gulp</a> - "The Streaming Build System" is the next generation, and it's made right here in Phoenix</li>
+  <li><a href="http://gruntjs.com/">Grunt</a> - "The Javascript Task Runner" has been around for a while, and you'll come across it for sure</li>
+</ul>
+
+<p>There are others, but Gulp is easy and very fast, has a thriving community and it's being used practically everywhere now.</p>
+
+<h3>Gulp</h3>
+
+<h4>Gulpfile.js</h4>
+
+<p>Gulp uses a Gulpfile to define your build process. It's just Node, and here's an example.</p>
+
+<div>
+<pre><code class="lang-javascript">
+// gulpfile.js
+
+var gulp = require('gulp');
+
+var lint   = require('gulp-coffeelint');
+var coffee = require('gulp-coffee');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+
+var paths = {
+  scripts: ['client/js/**/*.coffee', '!client/external/**/*.coffee']
+};
+
+// Compile coffeescript then minify, concat and save it
+gulp.task('scripts', function() {
+  // Minify and copy all JavaScript (except vendor scripts)
+  return gulp.src(paths.scripts)
+    .pipe(lint())
+    .pipe(coffee())
+    .pipe(uglify())
+    .pipe(concat('all.min.js'))
+    .pipe(gulp.dest('build/js'));
+});
+
+// Rerun the task when a file changes
+gulp.task('watch', function() {
+  gulp.watch(paths.scripts, ['scripts']);
+});
+
+// The default task (called when you run `gulp` from cli)
+gulp.task('default', ['scripts', 'watch']);
+</code></pre>
+</div>
+
+<h4>Execution</h4>
+
+<pre><code class="lang-bash">
+$ gulp
+</code></pre>
+
+Runs the <code>default</code> task, which in the example above, runs the <code>scripts</code> and <code>watch</code> tasks.
