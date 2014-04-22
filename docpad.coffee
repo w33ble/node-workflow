@@ -7,7 +7,7 @@ docpadConfig = {
   templateData:
     site:
       title: "Node Workflows"
-      description: "Code and examples of workflows with Node"
+      description: "Walking through a Node workflow"
       keywords: "node, workflows"
 
     getPreparedTitle: ->
