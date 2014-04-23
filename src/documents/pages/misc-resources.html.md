@@ -31,3 +31,22 @@ order: 200
 - [Gulp](http://gulpjs.com/)
 - [Grunt](http://gruntjs.com/)
 
+## Deploying
+
+- [Heroku](https://www.heroku.com/)
+- [Modulous](http://modulus.io/)
+- [Github Pages](https://pages.github.com/)
+- [Divshot](http://www.divshot.com/)
+- [Digital Ocean](https://www.digitalocean.com/?refcode=3f080df3953e)
+
+### Daemon tools
+
+- [forever](https://github.com/nodejitsu/forever)
+- [pm2](https://github.com/Unitech/pm2)
+
+## Local Groups
+
+- [NodeAZ](http://www.meetup.com/NodeAZ/)
+- [PHXJS](http://www.meetup.com/Phoenix-JavaScript/)
+- [Arizona Software Community](http://www.meetup.com/azsoftcom/)
+- [BeerJS PHX](http://www.meetup.com/beerjs-PHX/)
