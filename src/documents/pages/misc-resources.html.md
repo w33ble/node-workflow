@@ -41,7 +41,7 @@ order: 200
 ## Deploying
 
 - [Heroku](https://www.heroku.com/)
-- [Modulous](http://modulus.io/)
+- [Modulus](http://modulus.io/)
 - [Github Pages](https://pages.github.com/)
 - [Divshot](http://www.divshot.com/)
 - [Digital Ocean](https://www.digitalocean.com/?refcode=3f080df3953e)

@@ -18,9 +18,9 @@ You have some options, as it turns out. Here are some I've used and liked.
 
 Deployment involves pushing a git repo to their servers; that's it. They have a command line utility you can install that will allow you to control your instance as well. Best of all, they have a [free tier](https://www.heroku.com/pricing) to tinker with, so you can get your app online without taking out your wallet.
 
-### Modulous
+### Modulus
 
-[Modulous](http://modulus.io/) is another IaaS, but unlike Heroku, they only deal with Node hosting. They have native DB and File storage, and while they lack a free tier, their service is a bit cheaper than Heroku's.
+[Modulus](http://modulus.io/) is another IaaS, but unlike Heroku, they only deal with Node hosting. They have native DB and File storage, and while they lack a free tier, their service is a bit cheaper than Heroku's.
 
 Deployment is simple and happens via a command line utility that you install from `npm`.
 
