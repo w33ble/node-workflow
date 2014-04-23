@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hello Web | Node Workflows</title>
+        <title>Starting a Project | Node Workflows</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,29 +29,21 @@
                 <p>Let's get going with Node.js</p>
             </div>
 
-            <h2>Hello World - Web Edition</h2>
-
-<pre class="highlight"><code class="hljs javascript">
-<span class="hljs-comment">// index.js</span>
-
-<span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
-
-<span class="hljs-keyword">var</span> server = http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res)</span> {</span>
-res.end(<span class="hljs-string">'Hello World'</span>);
-});
-
-server.listen(<span class="hljs-number">8080</span>);
-console.log(<span class="hljs-string">'Running on port 8080'</span>);
-</code></pre>
-
-<p></div></p>
-<p><div class="container"></p>
-<p><h2>Execution</h2></p>
-<p>From the terminal, run <code>node</code> and the file to file</p>
-
-<pre class="highlight"><code class="hljs bash">
-$ node index.js
-Running on port <span class="hljs-number">8080</span>
+            <h2 id="version-control">Version Control</h2>
+<p>Version control is handy, whether you&#39;re working with others or not. <code>git</code> is the One True Way™.</p>
+<p><code>git init</code></p>
+<h2 id="package-creation">Package Creation</h2>
+<p>In Node, all projects are packages, yours is no exception. We&#39;ll use <code>npm</code> to create a <code>package.json</code> file, which will keep details about our package and its dependencies.</p>
+<p><code>npm init</code></p>
+<h2 id="ignored-files">Ignored Files</h2>
+<p>Add a <code>.gitignore</code> file to prevent checking in some files and paths to your project.</p>
+<p>Github offers a pretty decent list, but here&#39;s a list to get you started; simply copy and paste into your <code>.gitignore</code> file.</p>
+<pre class="highlight"><code class="hljs avrasm"><span class="hljs-preprocessor">.DS</span>_Store
+*<span class="hljs-preprocessor">.swp</span>
+logs
+*<span class="hljs-preprocessor">.log</span>
+node_modules
+bower_components
 </code></pre>
         </div>
         <script >(function(){
