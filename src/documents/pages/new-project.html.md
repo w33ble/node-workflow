@@ -16,6 +16,8 @@ In Node, all projects are packages, yours is no exception. We'll use `npm` to cr
 
 `npm init`
 
+[This interactive guide](http://package.json.nodejitsu.com/) is a nice source of more info you can add to your `package.json` file.
+
 ## Ignored Files
 
 Add a `.gitignore` file to prevent checking in some files and paths to your project.

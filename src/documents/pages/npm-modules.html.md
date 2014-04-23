@@ -1,7 +1,7 @@
 ---
 title: "NPM Modules"
 description: "This is where Node's true power comes from"
-order: 30
+order: 35
 ---
 
 ## Modules

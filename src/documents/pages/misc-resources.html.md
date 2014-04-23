@@ -4,8 +4,15 @@ description: "Everything from the other slides, in one place"
 order: 200
 ---
 
+## Installation
+
+- [Nave](https://github.com/isaacs/nave)
+- [nvm](https://github.com/creationix/nvm)
+- [Node Download](http://nodejs.org/download/)
+
 ## Getting started
 
+- [Node API](http://nodejs.org/api/)
 - [HarvestJS on Github](https://github.com/harvestjs)
 - [Nodeschool](http://nodeschool.io/)
 - [ExpressJS - Getting Started](http://expressjs.com/guide.html)
